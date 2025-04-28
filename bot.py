@@ -3,10 +3,11 @@ from telegram.ext import ApplicationBuilder, MessageHandler, filters, CallbackQu
 from gpt import *
 from util import *
 
-# тут будемо писати наш код :)
+import os
+from dotenv import load_dotenv
 
-TOKEN = "7085486431:AAFuvGIUJ7_ueMU8EzClrxED9p11yYTTLps"
-
+load_dotenv()
+TOKEN = os.getenv("TOKEN")
 
 async def start(update, context):
     dialog.mode = "None"
