@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
+GPT_TOKEN = os.getenv("GPT_TOKEN")
 
 async def start(update, context):
     dialog.mode = "None"
@@ -191,7 +192,7 @@ dialog.user = {}
 dialog.counter = 0
 
 chatgpt = ChatGptService(
-    token="gpt:AwXimzQXBV8upnlD2Fs0exPWVNTK9gmJGa_-erhzfPL1q5ldKc7zlb9PU53QlMYgrXBnjxK1uVJFkblB3TVSZ57z3Zm705v8y2sd9IG54evj_wDJ-zeNy_W7xT6lcYEGbp9qD9IbKvgZ5Ks22k_pKNEe74Sd")
+    token=GPT_TOKEN)
 
 app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
